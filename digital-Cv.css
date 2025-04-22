@@ -1,0 +1,52 @@
+* {
+  font-size: 18px; /* Thiết lập kích thước font chữ 18px cho tất cả các phần tử */
+  color: black; /* Thiết lập màu chữ đen cho tất cả các phần tử */
+}
+
+body {
+  background-color: #74c0fc; /* Thiết lập màu nền cho trang là màu xanh nhạt */
+}
+
+.section-title {
+  font-size: 1.5rem; /* Thiết lập kích thước font chữ cho tiêu đề phần là 1.5rem */
+  font-weight: bold; /* Thiết lập độ đậm cho tiêu đề phần */
+  color: blue; /* Thiết lập màu chữ cho tiêu đề phần là màu xanh */
+  margin-bottom: 1rem; /* Thiết lập khoảng cách dưới cho tiêu đề phần là 1rem */
+}
+
+.card {
+  border: 2px solid blue; /* Thiết lập viền cho thẻ là 2px màu xanh */
+  padding: 1.5rem; /* Thiết lập khoảng đệm bên trong thẻ là 1.5rem */
+  border-radius: 10px; /* Thiết lập bo góc cho thẻ là 10px */
+}
+
+.timeline-step {
+  display: flex; /* Sử dụng flexbox để sắp xếp các phần tử con theo hàng */
+  align-items: center; /* Căn giữa các phần tử theo trục dọc */
+  margin-bottom: 1rem; /* Thiết lập khoảng cách dưới cho bước trong dòng thời gian */
+}
+
+.timeline-step .circle {
+  width: 50px; /* Thiết lập chiều rộng cho hình tròn là 50px */
+  height: 50px; /* Thiết lập chiều cao cho hình tròn là 50px */
+  background-color: #9b59b6; /* Thiết lập màu nền cho hình tròn là màu tím nhạt */
+  color: white; /* Thiết lập màu chữ bên trong hình tròn là màu trắng */
+  border-radius: 50%; /* Thiết lập hình dạng cho hình tròn */
+  display: flex; /* Sử dụng flexbox để căn giữa nội dung bên trong hình tròn */
+  justify-content: center; /* Căn giữa nội dung theo trục ngang */
+  align-items: center; /* Căn giữa nội dung theo trục dọc */
+  font-weight: bold; /* Thiết lập độ đậm cho chữ bên trong hình tròn */
+  margin-right: 1rem; /* Thiết lập khoảng cách bên phải cho hình tròn */
+}
+
+/* Đảm bảo chiều cao đồng đều */
+.h-100 {
+  min-height: 100%; /* Đặt chiều cao tối thiểu cho phần tử là 100% */
+}
+
+.danger {
+  color: red; /* Thiết lập màu chữ đỏ cho phần tử */
+  font-weight: 700; /* Thiết lập độ đậm cho chữ là 700 */
+  text-transform: uppercase; /* Chuyển chữ thành chữ hoa */
+  font-family: sans-serif; /* Thiết lập kiểu chữ là sans-serif */
+}

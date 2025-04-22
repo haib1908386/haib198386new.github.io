@@ -1,0 +1,22 @@
+@media (max-width: 1024px) and (min-width: 768px) {
+  /* Khi màn hình có chiều rộng từ 768px đến 1024px */
+
+  .section2,
+  .section3 {
+    flex-direction: column; /* Thay đổi hướng hiển thị của phần tử thành dọc */
+    align-items: center; /* Canh giữa các phần tử theo chiều ngang */
+  }
+
+  .parent {
+    width: 70%; /* Đặt chiều rộng của phần tử cha là 70% so với chiều rộng màn hình */
+    margin: 15px auto; /* Căn giữa phần tử cha và thêm khoảng cách bên trên/dưới */
+  }
+
+  .accordion-body p {
+    font-size: 18px; /* Giảm kích thước font chữ của đoạn văn trong phần thân accordion */
+  }
+
+  .nav-brand img {
+    display: none; /* Ẩn hình ảnh thương hiệu (logo) */
+  }
+}

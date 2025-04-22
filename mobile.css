@@ -1,0 +1,33 @@
+@media (max-width: 767px) {
+  /* Các quy tắc áp dụng cho màn hình có chiều rộng tối đa 767px (dành cho thiết bị di động) */
+
+  .section2,
+  .section3 {
+    flex-direction: column; /* Sắp xếp các phần tử theo chiều dọc */
+    align-items: center; /* Căn giữa các phần tử theo chiều ngang */
+  }
+
+  .parent {
+    width: 90%; /* Đặt chiều rộng của phần tử cha là 90% để phù hợp với màn hình nhỏ */
+    margin: 10px auto; /* Căn giữa phần tử cha và thêm khoảng cách bên trên/dưới */
+  }
+
+  .accordion-body p {
+    font-size: 16px; /* Giảm kích thước chữ của đoạn văn để phù hợp với màn hình nhỏ */
+    line-height: 1.4; /* Tăng khoảng cách giữa các dòng để dễ đọc hơn */
+  }
+
+  .section-title {
+    font-size: 18px; /* Thu nhỏ kích thước tiêu đề để phù hợp với không gian hạn chế */
+    text-align: center; /* Căn giữa tiêu đề */
+  }
+
+  .btn {
+    width: 100%; /* Đặt chiều rộng của nút là 100% để chiếm toàn bộ chiều ngang */
+    font-size: 14px; /* Giảm kích thước chữ của nút */
+  }
+
+  .nav-brand img {
+    display: none; /* Ẩn hình ảnh thương hiệu (logo) để tiết kiệm không gian */
+  }
+}

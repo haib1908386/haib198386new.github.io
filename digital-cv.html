@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digital-Cv</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/digital-Cv.css" />
+  </head>
+  <body>
+    <h1 class="text-center pt-5 danger">Project Charter</h1>
+    <div class="container py-5">
+      <div class="row g-3">
+        <!-- Goals -->
+        <div class="col-md-6">
+          <div class="card h-100 d-flex flex-column">
+            <h3 class="section-title">Goals</h3>
+            <ul id="goals-container" class="list-unstyled flex-grow-1"></ul>
+          </div>
+        </div>
+
+        <!-- Team -->
+        <div class="col-md-3">
+          <div class="card h-100 d-flex flex-column">
+            <h3 class="section-title">Team</h3>
+            <ul id="team-container" class="list-unstyled flex-grow-1"></ul>
+          </div>
+        </div>
+
+        <!-- Timeline -->
+        <div class="col-md-3">
+          <div class="card h-100 d-flex flex-column">
+            <h3 class="section-title">Timeline</h3>
+            <div id="timeline-container" class="flex-grow-1"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-3 mt-4">
+        <!-- Scopes -->
+        <div class="col-md-6">
+          <div class="card h-100 d-flex flex-column">
+            <h3 class="section-title">Scopes</h3>
+            <div id="scope-container" class="row flex-grow-1"></div>
+          </div>
+        </div>
+
+        <!-- Primary -->
+        <div class="col-md-6">
+          <div class="card h-100 d-flex flex-column">
+            <h3 id="primary-title" class="section-title">
+              Primary: Các phần ưu tiên trong dự án
+            </h3>
+            <p id="primary-description">
+              Danh sách các mục tiêu cần đạt được và chức năng cần ưu tiên hoàn
+              thành:
+            </p>
+            <ul id="primary-container" class="list-unstyled flex-grow-1"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./js/digital-cv.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // Lấy tên dự án từ localStorage
+        const projectName = localStorage.getItem("selectedProject");
+        if (!projectName) return;
+
+        // Gọi hàm loadProject với tên dự án
+        const project = projects[projectName];
+        if (!project) return;
+
+        // Điền Goals
+        document.getElementById("goals-container").innerHTML = project.goals
+          .map((goal) => `<li>${goal}</li>`)
+          .join("");
+
+        // Điền Scopes
+        document.getElementById("scope-container").innerHTML = project.scopes
+          .map((scope) => `<div class="col-6"><p>${scope}</p></div>`)
+          .join("");
+
+        // Điền Team
+        document.getElementById("team-container").innerHTML = project.team
+          .map((member) => `<li>${member}</li>`)
+          .join("");
+
+        // Điền Primary
+        document.getElementById("primary-container").innerHTML = project.primary
+          .map((item) => `<li>${item}</li>`)
+          .join("");
+
+        // Điền Timeline
+        document.getElementById("timeline-container").innerHTML =
+          project.timeline.map((event) => `<p>${event}</p>`).join("");
+      });
+    </script>
+  </body>
+</html>

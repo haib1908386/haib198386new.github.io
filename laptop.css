@@ -1,0 +1,574 @@
+/*---------------------CSS GENERAL-------------*/
+/* Đặt thuộc tính chung cho tất cả các phần tử */
+* {
+  box-sizing: border-box; /* Bao gồm cả padding và border trong kích thước phần tử */
+  margin: 0; /* Loại bỏ margin mặc định */
+  padding: 0; /* Loại bỏ padding mặc định */
+}
+
+/* Định dạng cho thẻ body */
+body {
+  height: 2000px; /* Đặt chiều cao cho body */
+  font-family: Arial, Helvetica, sans-serif; /* Thiết lập font chữ */
+}
+
+/* Định dạng cho thẻ main */
+main {
+  background-color: #ffd43b; /* Đặt màu nền */
+  background-repeat: no-repeat; /* Không lặp lại nền */
+  background-size: cover; /* Phủ đầy nền */
+}
+
+/* Định dạng cho thẻ p */
+p {
+  color: black; /* Đặt màu chữ là màu đen */
+}
+
+/* Định dạng cho thẻ a */
+a {
+  text-decoration: none; /* Loại bỏ gạch chân */
+  color: black; /* Đặt màu chữ là màu đen */
+}
+
+/* Định dạng cho thẻ i */
+i {
+  padding: 5px; /* Thêm khoảng cách bên trong */
+  color: #4263eb; /* Màu xanh chủ đạo */
+  font-size: 30px; /* Kích thước font */
+}
+
+/* Định dạng cho thẻ ul */
+ul {
+  list-style: none; /* Xoá bỏ dấu chấm trong danh sách */
+  padding: 10px; /* Thêm khoảng cách bên trong */
+}
+
+/* Định dạng cho thẻ li trước nội dung */
+li::before {
+  content: "-"; /* Thêm dấu gạch ngang trước mỗi mục */
+  margin: 10px; /* Thêm khoảng cách */
+}
+
+/* Định dạng cho thẻ section */
+section {
+  display: flex; /* Sử dụng flexbox để sắp xếp */
+  margin-bottom: 30px; /* Khoảng cách dưới */
+}
+
+/* Định dạng cho các phần tử con trực tiếp của section */
+section > * {
+  flex: 1; /* Các phần tử con sẽ chia đều không gian */
+}
+
+/* Định dạng chung cho class section */
+.section {
+  min-height: 400px; /* Đặt chiều cao tối thiểu cho mỗi cột */
+}
+
+/* Định dạng cho class row */
+.row {
+  display: flex; /* Sử dụng flexbox để sắp xếp */
+  flex-wrap: wrap; /* Cho phép các phần tử xuống dòng nếu không đủ không gian */
+}
+
+/* Css error email */
+#error-email {
+  color: red; /* Màu đỏ cho thông báo lỗi */
+  font-weight: 700; /* Chữ đậm */
+}
+
+/* none view more */
+.view-more,
+.less-more {
+  display: none; /* Ẩn các phần tử này */
+}
+
+/*------------------ :root-----------------------*/
+/* Định nghĩa các biến toàn cục */
+:root {
+  --color-primary: #4263eb; /* Màu xanh chủ đạo */
+}
+
+/*------------------exp-bar Thanh tiến trình kỹ năng-----------------------*/
+.exp-bar {
+  width: 50px; /* Chiều rộng thanh tiến trình */
+  height: 5px; /* Chiều cao thanh tiến trình */
+  background-color: grey; /* Màu xám nền */
+  display: inline-block; /* Hiển thị inline-block */
+}
+
+/* Định dạng cho phần lấp đầy của thanh tiến trình */
+.fill {
+  background-color: var(
+    --color-primary
+  ); /* Sử dụng màu xanh từ biến toàn cục */
+}
+
+/* Định dạng cho class sub-title */
+.sub-title {
+  color: black; /* Màu chữ đen */
+}
+
+/*---------------------Header--------------- */
+/*------------------------banner------------------*/
+/* Định dạng cho banner */
+.banner {
+  height: 300px; /* Chiều cao banner */
+  width: 100%; /* Chiều rộng banner */
+  background-repeat: no-repeat; /* Không lặp lại nền */
+  background-size: cover; /* Phủ đầy nền */
+  position: relative; /* Vị trí tương đối */
+}
+
+/* Định dạng cho tiêu đề của banner */
+.banner_title {
+  position: absolute; /* Vị trí tuyệt đối so với banner */
+  top: 40%; /* Đặt ở 40% chiều cao banner */
+  width: 100%; /* Chiều rộng 100% */
+  text-align: center; /* Căn giữa nội dung */
+  text-shadow: 0 2px 2px black; /* Đổ bóng chữ */
+  font-size: 50px; /* Kích thước chữ lớn */
+  color: black; /* Màu chữ đen */
+}
+
+/* Định dạng cho phụ đề */
+.subtitle {
+  font-size: 13px; /* Kích thước chữ nhỏ */
+  font-weight: bold; /* Chữ đậm */
+  color: black; /* Màu chữ đen */
+}
+/* ------------------------navigation------------------------ */
+/* Định dạng cho avatar trong nav-brand */
+.nav-brand img {
+  width: 150px; /* Chiều rộng của avatar */
+  height: 150px; /* Chiều cao của avatar */
+  border-radius: 70%; /* Bo tròn avatar theo tỉ lệ 70% */
+  object-fit: cover; /* Giữ tỉ lệ ảnh phù hợp trong khung */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hiệu ứng chuyển đổi khi hover */
+}
+
+/* Hiệu ứng hover cho avatar */
+.nav-brand img:hover {
+  transform: scale(1.1); /* Phóng to nhẹ khi hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Thêm đổ bóng khi hover */
+}
+
+/* Định dạng vị trí cho phần change-img */
+.change-img {
+  top: -75px; /* Định vị từ trên xuống */
+  left: 40px; /* Định vị từ trái sang */
+}
+
+/* Định dạng tổng thể cho nav-brand */
+.nav-brand {
+  position: relative; /* Đặt vị trí tương đối để sử dụng các phần tử con */
+}
+
+/* Định dạng tổng thể cho nav */
+nav {
+  padding: -5px; /* Khoảng cách padding (không hợp lý, cần xem xét) */
+  display: grid; /* Sử dụng grid layout */
+  grid-template-columns: repeat(5, 1fr); /* Chia nav thành 5 cột bằng nhau */
+  gap: 20px; /* Khoảng cách giữa các cột */
+  align-items: center; /* Căn chỉnh nội dung theo trục dọc */
+  width: 100%; /* Chiều rộng 100% của nav */
+  font-weight: bold; /* Chữ đậm cho nội dung trong nav */
+  background-color: #d3f9d8; /* Màu nền cho nav */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Đổ bóng cho nav */
+}
+
+/* Hiệu ứng hover cho mục nav-item */
+.nav-item:hover {
+  background-color: #ffc9c9; /* Đổi màu nền khi hover */
+  transform: scale(1.05); /* Phóng to nhẹ khi hover */
+  cursor: pointer; /* Hiển thị con trỏ dạng pointer */
+  border-radius: 70%; /* Bo tròn mục nav-item */
+}
+
+/* Định dạng cho icon trong nav-item */
+.nav-item i {
+  font-size: 24px; /* Kích thước font của icon */
+  margin-bottom: 5px; /* Khoảng cách dưới của icon */
+  color: var(--color-primary); /* Màu chính cho icon */
+  transition: color 0.3s ease; /* Hiệu ứng chuyển đổi màu */
+}
+
+/* Đổi màu icon khi hover */
+.nav-item:hover i {
+  color: #19c510; /* Màu xanh lá cho icon khi hover */
+}
+
+/* Định dạng cho link trong nav-item */
+.nav-item a {
+  text-decoration: none; /* Loại bỏ gạch chân */
+  color: var(--color-primary); /* Màu chính cho link */
+  font-size: 20px; /* Kích thước chữ */
+  transition: color 0.5s ease; /* Hiệu ứng chuyển đổi màu */
+}
+
+/* Đổi màu chữ khi hover cho link */
+.nav-item:hover a {
+  color: #19c510; /* Màu xanh lá cho chữ khi hover */
+}
+
+/* Định dạng lại cho avatar trong nav-brand */
+.nav-brand img {
+  width: 150px; /* Chiều rộng của avatar */
+  height: 150px; /* Chiều cao của avatar */
+  border: #4263eb 5px solid; /* Đường viền màu xanh */
+  border-radius: 50%; /* Bo tròn hoàn toàn avatar */
+  object-fit: cover; /* Giữ tỉ lệ ảnh phù hợp trong khung */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hiệu ứng chuyển đổi khi hover */
+}
+
+/* Hiệu ứng hover cho avatar trong nav-brand */
+.nav-brand img:hover {
+  transform: scale(1.1); /* Phóng to nhẹ khi hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Thêm đổ bóng khi hover */
+}
+
+/* Định dạng cho tiêu đề accordion */
+.accordion-header {
+  font-weight: bold; /* Chữ đậm */
+  font-size: 18px; /* Kích thước chữ */
+}
+
+/*--------------------end header--------------------------*/
+
+/*----------------------------------------------------*/
+
+/*---------------------Main---------------------------- */
+
+/*info Thông tin cá nhân*/
+#info {
+  border-radius: 13px; /* Bo góc cho phần thông tin cá nhân */
+  background-color: #f1f3f5; /* Màu nền xám nhạt */
+  padding: 15px; /* Khoảng cách bên trong */
+  line-height: 1.5; /* Khoảng cách giữa các dòng */
+  border: 2px solid grey; /* Đường viền màu xám */
+}
+#info i {
+  padding-top: 15px; /* Thêm khoảng cách trên */
+  font-weight: bold; /* Chữ đậm */
+}
+/* ẨN THÔNG TIN */
+#info .section-content {
+  display: none; /* Ẩn nội dung thông tin cá nhân */
+}
+
+/*target Mục tiêu nghề nghiệp*/
+#target {
+  border: 2px solid grey; /* Đường viền màu xám */
+  border-radius: 13px; /* Bo góc cho phần mục tiêu */
+  background-color: #ffe3e3; /* Màu nền hồng nhạt */
+  text-align: justify; /* Canh đều văn bản */
+}
+
+/* Định dạng cho accordion sở thích */
+#hobbyAccordion {
+  display: grid; /* Sử dụng grid layout */
+  grid-template-columns: repeat(2, 1fr); /* Tạo 2 cột bằng nhau */
+  gap: 20px; /* Khoảng cách giữa các mục */
+  text-align: center; /* Căn giữa nội dung */
+}
+
+#hobbyAccordion.accordion-header {
+  font-size: 16px; /* Kích thước chữ của tiêu đề */
+  margin: 0; /* Loại bỏ margin */
+}
+
+#hobbyAccordion.accordion-body {
+  font-size: 24px; /* Kích thước của icon */
+  color: #1a73e8; /* Màu xanh của Google */
+}
+
+#hobbyAccordion.accordion-body p {
+  margin: 0; /* Loại bỏ khoảng cách không cần thiết */
+}
+
+#hobby .section-content i {
+  font-size: 30px; /* Kích thước font của icon */
+}
+
+/* Padding chung cho #info và #target */
+#info,
+#target {
+  padding: 20px; /* Khoảng cách bên trong */
+}
+
+/* Ẩn nội dung của các phần khác */
+#experience .section-content,
+#skill .section-content,
+#language .section-content,
+#hobby .section-content,
+#education .section-content,
+#activity .section-content {
+  display: none; /* Ẩn nội dung mặc định */
+}
+
+#experienceAccordion .accordion-header {
+  color: black; /* Màu chữ đen */
+  font-weight: bold; /* Chữ đậm */
+  font-size: 14px; /* Kích thước chữ */
+  display: flex; /* Sắp xếp nội dung theo hàng ngang */
+}
+
+/* Tổng thể cho cả layout grid */
+.section2,
+.section3 {
+  display: grid; /* Sử dụng grid layout */
+  grid-template-columns: repeat(3, 1fr); /* Chia thành 3 cột bằng nhau */
+  gap: 20px; /* Khoảng cách giữa các ô */
+  margin: 20px auto; /* Khoảng cách trên dưới và căn giữa ngang */
+  max-width: 1200px; /* Chiều rộng tối đa của layout */
+  padding: 20px; /* Khoảng cách bên trong */
+}
+
+/* Mỗi id sẽ là 1 ô grid */
+.section2 > div,
+.section3 > div {
+  background-color: #ffffff; /* Màu nền trắng */
+  border: 1px solid #ddd; /* Đường viền màu xám nhạt */
+  border-radius: 8px; /* Bo góc cho ô */
+  padding: 20px; /* Khoảng cách bên trong */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
+  display: flex; /* Sắp xếp nội dung theo cột */
+  flex-direction: column; /* Sắp xếp theo trục dọc */
+  gap: 10px; /* Khoảng cách giữa các phần tử bên trong */
+}
+
+/* Tiêu đề chính cho từng section */
+.section-title,
+.section-title2 {
+  font-size: 20px; /* Kích thước chữ của tiêu đề */
+  color: black; /* Màu chữ đen */
+  margin-bottom: 10px; /* Khoảng cách dưới tiêu đề */
+  display: flex; /* Sắp xếp nội dung theo hàng ngang */
+  align-items: center; /* Căn giữa theo trục dọc */
+  gap: 10px; /* Khoảng cách giữa icon và chữ */
+  border-bottom: 3px solid #007bff; /* Đường viền dưới màu xanh */
+  padding-bottom: 10px; /* Khoảng cách dưới viền */
+}
+
+/* Mặc định: Desktop */
+.section2,
+.section3 {
+  display: flex; /* Sắp xếp nội dung theo hàng ngang */
+  flex-wrap: wrap; /* Cho phép nội dung xuống dòng khi không đủ chỗ */
+  gap: 20px; /* Khoảng cách giữa các ô */
+}
+
+/* Định dạng cho phần tử cha */
+.parent {
+  width: 45%; /* Hai phần tử trên cùng một hàng */
+  margin: 10px; /* Khoảng cách giữa các phần tử */
+}
+
+/* Định dạng cho đoạn văn trong accordion-body */
+.accordion-body p {
+  font-size: 16px; /* Kích thước chữ */
+  line-height: 1.5; /* Khoảng cách giữa các dòng */
+}
+
+/* Định dạng cho icon trong tiêu đề */
+.section-title i,
+.section-title2 i {
+  color: var(--color-primary); /* Màu chính của icon */
+}
+
+/* Nội dung từng ô */
+/* .section-content {
+  flex-grow: 1; /* Phần tử này sẽ chiếm hết không gian còn lại 
+} */
+
+.section-content .title {
+  font-size: 16px; /* Kích thước chữ của tiêu đề nhỏ */
+  font-weight: bold; /* Chữ đậm */
+}
+
+.section-content .content p,
+.section-content ul li {
+  margin: 5px 0; /* Khoảng cách trên dưới cho các đoạn văn hoặc danh sách */
+  line-height: 1.6; /* Khoảng cách giữa các dòng */
+}
+
+/* Định dạng cho tiêu đề chính */
+.section-title {
+  display: flex; /* Sắp xếp nội dung theo hàng ngang */
+  justify-content: space-between; /* Căn đều hai bên */
+  text-transform: uppercase; /* Viết hoa toàn bộ chữ */
+  font-weight: bold; /* Chữ đậm */
+  font-size: 20px; /* Kích thước chữ */
+}
+
+.section-content .title {
+  font-weight: bold; /* Chữ đậm cho tiêu đề nhỏ */
+}
+
+/*----------------CSS CHỨNG NHẬN CHỨNG CHỈ------------*/
+
+/* Định dạng cho phần chứng nhận */
+#certificate {
+  padding: 20px; /* Khoảng cách bên trong */
+  margin: 20px auto; /* Căn giữa và thêm khoảng cách trên dưới */
+  max-width: 1200px; /* Chiều rộng tối đa */
+  background-color: #ffe8cc; /* Màu nền vàng nhạt */
+  border-radius: 15px; /* Bo góc */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
+}
+
+/* Thiết kế card */
+.card {
+  border: 1px solid #ddd; /* Đường viền màu xám nhạt */
+  border-radius: 8px; /* Bo góc cho thẻ */
+  padding: 10px; /* Khoảng cách bên trong */
+  background-color: #f9f9f9; /* Màu nền xám nhạt */
+}
+.card-img img {
+  max-width: 100%; /* Chiều rộng tối đa 100% */
+  height: auto; /* Tự động điều chỉnh chiều cao */
+  border-radius: 4px; /* Bo góc cho hình ảnh */
+}
+h5 {
+  font-weight: bold; /* Chữ đậm */
+  margin-bottom: 10px; /* Khoảng cách dưới */
+  font-size: 20px; /* Kích thước chữ */
+}
+.card:hover {
+  background-color: #e8f4fc; /* Thay đổi màu nền khi hover */
+  transform: translateY(-5px); /* Nâng thẻ lên một chút */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Thêm bóng đổ */
+}
+.card-img img {
+  transition: transform 0.3s ease-in-out; /* Hiệu ứng chuyển đổi cho hình ảnh */
+}
+.card:hover .card-img img {
+  transform: scale(1.1); /* Phóng to hình ảnh khi hover */
+}
+#certificate .card-img img {
+  border-radius: 8px; /* Bo góc hình ảnh trong card */
+}
+
+#certificate .inline-block h4 {
+  font-size: 16px; /* Kích thước chữ */
+  margin: 0 0 10px; /* Khoảng cách dưới */
+}
+
+#certificate .inline-block p {
+  margin: 0; /* Loại bỏ khoảng cách mặc định */
+}
+
+#certificate .card {
+  display: flex; /* Sắp xếp các phần tử con theo hàng ngang */
+  gap: 15px; /* Khoảng cách giữa các phần tử con */
+  align-items: center; /* Căn giữa theo trục dọc */
+  background-color: #ffffff; /* Màu nền trắng */
+  border: 1px solid #ddd; /* Đường viền màu xám nhạt */
+  border-radius: 10px; /* Bo góc */
+  padding: 20px; /* Khoảng cách bên trong */
+}
+
+#certificate .card p {
+  margin: 3px 0; /* Khoảng cách trên dưới */
+  color: black; /* Màu chữ đen */
+  font-size: 14px; /* Kích thước chữ */
+  line-height: 1.5; /* Khoảng cách giữa các dòng */
+}
+
+.sub-title {
+  font-style: italic; /* Chữ in nghiêng */
+}
+
+/*----------------- CSS Dự án----------*/
+
+/* Tổng thể phần project */
+#project {
+  padding: 20px; /* Khoảng cách bên trong */
+  margin: 20px auto; /* Căn giữa và thêm khoảng cách trên dưới */
+  max-width: 1200px; /* Chiều rộng tối đa */
+  border: 2px solid #d0bfff; /* Đường viền tím nhạt */
+  border-radius: 15px; /* Bo góc */
+  background-color: #d8f5a2; /* Màu nền xanh nhạt */
+}
+
+#project .section-title {
+  font-size: 20px; /* Kích thước chữ */
+  color: black; /* Màu chữ đen */
+  text-align: center; /* Căn giữa chữ */
+  margin-bottom: 20px; /* Khoảng cách dưới */
+  text-transform: uppercase; /* Chuyển thành chữ in hoa */
+  font-weight: bold; /* Chữ đậm */
+}
+
+#project .section-content {
+  display: grid; /* Sử dụng grid layout */
+  grid-template-columns: repeat(3, 1fr); /* Chia thành 3 cột bằng nhau */
+  gap: 20px; /* Khoảng cách giữa các mục */
+}
+
+/* Thiết kế card */
+#project .card {
+  background-color: #fff; /* Màu nền trắng */
+  border: 1px solid #ddd; /* Đường viền xám nhạt */
+  border-radius: 8px; /* Bo góc */
+  overflow: hidden; /* Cắt phần dư */
+}
+
+/* Căn chỉnh hình ảnh đều */
+#project .card-img img,
+#project .card img {
+  width: 100%; /* Chiều rộng 100% */
+  height: 200px; /* Chiều cao cố định */
+  object-fit: cover; /* Giữ tỉ lệ hình ảnh */
+  display: block; /* Hiển thị dạng block */
+  border-bottom: 1px solid #ddd; /* Đường viền dưới */
+}
+
+#project h3 {
+  font-size: 20px; /* Kích thước chữ */
+  margin: 15px 10px 10px; /* Khoảng cách các phía */
+  color: black; /* Màu chữ đen */
+  text-transform: uppercase; /* Chuyển chữ in hoa */
+}
+
+#project .sub-title {
+  font-size: 15px; /* Kích thước chữ nhỏ hơn */
+  margin: 0 10px 10px; /* Khoảng cách các phía */
+  display: flex; /* Sắp xếp nội dung theo hàng ngang */
+  align-items: center; /* Căn giữa theo trục dọc */
+  gap: 10px; /* Khoảng cách giữa các phần tử */
+}
+
+#project .btn-primary {
+  background-color: #007bff; /* Màu nền xanh */
+  color: #fff; /* Màu chữ trắng */
+  padding: 3px 10px; /* Khoảng cách bên trong */
+  border-radius: 5px; /* Bo góc */
+  font-size: 12px; /* Kích thước chữ nhỏ */
+}
+
+#project .content {
+  padding: 10px 15px 20px; /* Khoảng cách các phía */
+  font-size: 14px; /* Kích thước chữ */
+  color: black; /* Màu chữ đen */
+}
+
+#project .content p {
+  margin: 5px 0; /* Khoảng cách trên dưới */
+  line-height: 1.6; /* Khoảng cách giữa các dòng */
+  font-size: 16px; /* Kích thước chữ */
+}
+
+/*-----------------------------------------------------*/
+
+/*-----------------Footer-------------------------*/
+
+/* Định dạng tổng thể cho footer */
+footer {
+  background-color: #38d9a9; /* Màu nền xanh lá */
+  padding: 15px; /* Khoảng cách bên trong */
+  text-align: center; /* Căn giữa nội dung */
+  display: flex; /* Sắp xếp nội dung theo hàng ngang */
+  justify-content: center; /* Căn giữa các phần tử theo chiều ngang */
+  gap: 10px; /* Khoảng cách giữa các phần tử */
+}
